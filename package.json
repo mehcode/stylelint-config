@@ -1,0 +1,30 @@
+{
+    "name": "@launchbadge/stylelint-config",
+    "version": "0.1.0",
+    "description": "",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/launchbadge/stylelint-config.git"
+    },
+    "scripts": {
+        "lint": "eslint \"*.js\""
+    },
+    "keywords": [
+        "eslint-config"
+    ],
+    "author": "Ryan Leckey <ryan@launchbadge.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/launchbadge/stylelint-config/issues"
+    },
+    "homepage": "https://github.com/launchbadge/stylelint-config#readme",
+    "dependencies": {},
+    "devDependencies": {
+        "@launchbadge/eslint-config": "^0.16.7",
+        "eslint": "^6.7.2"
+    },
+    "peerDependencies": {
+        "stylelint": "^12.0.0"
+    }
+}

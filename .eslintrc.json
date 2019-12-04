@@ -1,0 +1,4 @@
+{
+    "extends": [ "@launchbadge/eslint-config" ],
+    "env": { "node": true }
+}
