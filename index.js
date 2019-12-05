@@ -1,5 +1,10 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 module.exports = {
+    plugins: [
+        "stylelint-declaration-use-variable",
+        "stylelint-no-unsupported-browser-features",
+        "stylelint-a11y"
+    ],
     rules: {
         //
         // Possible Errors
@@ -116,10 +121,12 @@ module.exports = {
         "selector-list-comma-newline-before": "never-multi-line",
         "selector-list-comma-space-after": "always-single-line",
         "selector-list-comma-space-before": "never",
-        "rule-empty-line-before": [ "always", {
-            except: [ "first-nested" ],
-            ignore: [ "after-comment" ]
-        }],
+        "rule-empty-line-before": [
+            "always", {
+                except: [ "first-nested" ],
+                ignore: [ "after-comment" ]
+            }
+        ],
         "media-feature-colon-space-after": "always",
         "media-feature-colon-space-before": "never",
         "media-feature-name-case": "lower",
@@ -130,10 +137,12 @@ module.exports = {
         "media-query-list-comma-newline-before": "never-multi-line",
         "media-query-list-comma-space-after": "always-single-line",
         "media-query-list-comma-space-before": "never",
-        "at-rule-empty-line-before": [ "always", {
-            except: [ "after-same-name" ],
-            ignore: [ "after-comment" ],
-        }],
+        "at-rule-empty-line-before": [
+            "always", {
+                except: [ "after-same-name" ],
+                ignore: [ "after-comment" ]
+            }
+        ],
         "at-rule-name-case": "lower",
         "at-rule-name-space-after": "always",
         "at-rule-semicolon-newline-after": "always",
@@ -146,6 +155,50 @@ module.exports = {
         "no-eol-whitespace": true,
         "no-missing-end-of-source-newline": true,
         "no-empty-first-line": true,
-        "unicode-bom": "never"
+        "unicode-bom": "never",
+
+        //
+        // https://github.com/YozhikM/stylelint-a11y
+        //
+
+        "a11y/no-outline-none": true,
+        "a11y/no-display-none": true,
+        "a11y/no-obsolete-attribute": true,
+        "a11y/no-obsolete-element": true,
+        "a11y/selector-pseudo-class-focus": true,
+        "a11y/no-text-align-justify": true,
+        "a11y/media-prefers-color-scheme": [ true, { severity: "warning" } ],
+        "a11y/media-prefers-reduced-motion": [ true, { severity: "warning" } ],
+        "a11y/content-property-no-static-value": true,
+
+        //
+        // https://github.com/ismay/stylelint-no-unsupported-browser-features
+        //
+
+        "plugin/no-unsupported-browser-features": [
+            true,
+            {
+                ignore: [
+                    // [...] not supporting the avoid-column, column, and avoid (in the column
+                    // context) values for the properties break-before, break-after,
+                    // and break-inside.
+                    "multicolumn",
+                    // Not supported in older Edge (use chrome Edge)
+                    "intrinsic-width",
+                    // Not supported in older Edge
+                    "css-resize",
+                    // Just a decoration
+                    "css-filters",
+                    "css-appearance"
+                ]
+            }
+        ],
+
+        //
+        // Enforces using variables for colors
+        // https://github.com/sh-waqar/stylelint-declaration-use-variable
+        //
+
+        "sh-waqar/declaration-use-variable": [[ "/color/", { ignoreValues: [ "transparent", "inherit", "white", "black" ]}]]
     }
 };

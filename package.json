@@ -19,7 +19,11 @@
         "url": "https://github.com/launchbadge/stylelint-config/issues"
     },
     "homepage": "https://github.com/launchbadge/stylelint-config#readme",
-    "dependencies": {},
+    "dependencies": {
+        "stylelint-a11y": "^1.2.2",
+        "stylelint-declaration-use-variable": "^1.7.2",
+        "stylelint-no-unsupported-browser-features": "^4.0.0"
+    },
     "devDependencies": {
         "@launchbadge/eslint-config": "^0.16.7",
         "eslint": "^6.7.2"
