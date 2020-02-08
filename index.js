@@ -3,7 +3,8 @@ module.exports = {
     plugins: [
         "stylelint-declaration-use-variable",
         "stylelint-no-unsupported-browser-features",
-        "stylelint-a11y"
+        "stylelint-a11y",
+        "stylelint-selector-bem-pattern"
     ],
     rules: {
         //
@@ -40,7 +41,6 @@ module.exports = {
         // Limit language features
         //
 
-        "unit-whitelist": [ "px", "deg", "vmin", "vmax", "vh", "vw", "fr", "s" ],
         "shorthand-property-no-redundant-values": true,
         "value-no-vendor-prefix": true,
         "property-no-vendor-prefix": true,
@@ -162,12 +162,11 @@ module.exports = {
         //
 
         "a11y/no-outline-none": true,
-        "a11y/no-display-none": true,
         "a11y/no-obsolete-attribute": true,
         "a11y/no-obsolete-element": true,
         "a11y/selector-pseudo-class-focus": true,
         "a11y/no-text-align-justify": true,
-        "a11y/media-prefers-reduced-motion": [ true, { severity: "warning" } ],
+        "a11y/media-prefers-reduced-motion": [ true, { severity: "warning" }],
         "a11y/content-property-no-static-value": true,
 
         //
@@ -198,6 +197,14 @@ module.exports = {
         // https://github.com/sh-waqar/stylelint-declaration-use-variable
         //
 
-        "sh-waqar/declaration-use-variable": [[ "/color/", { ignoreValues: [ "transparent", "inherit", "white", "black" ]}]]
+        "sh-waqar/declaration-use-variable": [[ "/color/", { ignoreValues: [ "transparent", "inherit", "white", "black" ]}]],
+
+        //
+        // SUIT CSS relies on structured class names and meaningful hyphens
+        // https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md
+        // https://github.com/simonsmith/stylelint-selector-bem-pattern
+        //
+
+        "plugin/selector-bem-pattern": { preset: "suit" }
     }
 };
