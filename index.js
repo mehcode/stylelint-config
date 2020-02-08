@@ -47,7 +47,6 @@ module.exports = {
         "declaration-block-no-redundant-longhand-properties": true,
         "declaration-no-important": true,
         "declaration-block-single-line-max-declarations": 1,
-        "selector-class-pattern": [ "^[a-z]+([A-Z][a-z0-9]*?)*", { resolveNestedSelectors: true }],
         "selector-max-id": 0,
         "selector-max-empty-lines": 0,
         "selector-max-universal": 0,
