@@ -205,6 +205,11 @@ module.exports = {
         // https://github.com/simonsmith/stylelint-selector-bem-pattern
         //
 
-        "plugin/selector-bem-pattern": { preset: "suit" }
+        "plugin/selector-bem-pattern": { 
+            preset: "suit",
+            implicitComponents: [
+                "src/**/[A-Z][a-z]*.css"
+            ]
+        }
     }
 };
